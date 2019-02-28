@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Autofac" Version="4.8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Controls\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Data\" />
+    <Folder Include="Services\General\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Contracts\Services\General\" />
+    <Folder Include="Models\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Contracts\Repository\" />
+    <Folder Include="Bootstrap\" />
+    <Folder Include="Utility\" />
+    <Folder Include="ViewModels\Base\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Enumerations\" />
+    <Folder Include="Templates\" />
+    <Folder Include="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Repository\GenericRepository.cs" />
+    <Compile Remove="Utility\AppSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MenuView.xaml.cs">
+      <DependentUpon>..\..\..\..\Training\Xamarin\xamarin-forms-enterprise-mobile-application\03\demos\Demos\BethanysPieShop.Mobile\BethanysPieShop.Mobile\BethanysPieShop.Mobile\Views\Views\MenuView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\RegistrationView.xaml.cs">
+      <DependentUpon>..\..\..\..\Training\Xamarin\xamarin-forms-enterprise-mobile-application\03\demos\Demos\BethanysPieShop.Mobile\BethanysPieShop.Mobile\BethanysPieShop.Mobile\Views\Views\RegistrationView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\BethanyNavigationPage.xaml.cs">
+      <DependentUpon>ExerciseNavigationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\ExerciseNavigationPage.xaml.cs">
+      <DependentUpon>ExerciseNavigationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Templates\MenuItemTemplate.xaml.cs">
+      <DependentUpon>..\..\..\..\Training\Xamarin\xamarin-forms-enterprise-mobile-application\03\demos\Demos\BethanysPieShop.Mobile\BethanysPieShop.Mobile\BethanysPieShop.Mobile\Templates\Templates\MenuItemTemplate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

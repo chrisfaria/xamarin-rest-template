@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:xTemplate.Mobile.Views"
+             x:Class="xTemplate.Mobile.Views.MainView"
+             Title="WorkoutNow Menu"
+             xmlns:utility="clr-namespace:xTemplate.Mobile.Utility;assembly=xTemplate.Mobile"
+             utility:ViewModelLocator.AutoWireViewModel="True"
+             MasterBehavior="Popover">
+    <MasterDetailPage.Master>
+        <views:MenuView BindingContext="{Binding MenuViewModel}" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage></ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
