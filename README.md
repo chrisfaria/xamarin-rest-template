@@ -13,7 +13,7 @@ It has been written to ensure the following principles:
 ### Renaming to make your own
 Follow these steps to change the default name *xTemplate* to your own projects name (assuming you're using Visual Studio):
 
-1. from the Solution Explorerright click and rename the solution
+1. from the Solution Explorer right click and rename the solution
 1. from the Solution Explorer right click and rename each project
 1. for each project go to the project options / properties and change the default namespace, save
 1. run a find and replace, replacing *xTemplate* with the new name
