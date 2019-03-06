@@ -4,7 +4,7 @@
              x:Class="xTemplate.Mobile.Views.RegistrationView"
              xmlns:utility="clr-namespace:xTemplate.Mobile.Utility;assembly=xTemplate.Mobile"
              utility:ViewModelLocator.AutoWireViewModel="True"
-             BackgroundColor="{StaticResource BethanyPurple}">
+             BackgroundColor="{StaticResource MainCyan}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
