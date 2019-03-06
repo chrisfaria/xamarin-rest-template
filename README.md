@@ -20,3 +20,13 @@ Follow these steps to change the default name *xTemplate* to your own projects n
 1. from the Solution Explorer for the Android and iOS projects remove the reference to the shared code project (was *xTemplate.Mobile* before rename) and then add it back
 1. clean and build the solution
 1. rename the root folder
+
+### Git Branch Naming
+I am using the following naming conventions for branches:
+
+* __master__: production branch
+* hotfix/branch-desc: branch created from __master__ to quickly fix an issue in production
+* rel/branch-desc: branch created from a feature branch to be prepared for merge to __master__
+* __develop__: development branch
+* feat/branch-desc: branch created from __develop__ to add a new feature
+* bug/branch-desc: branch created from __develop__ to fix a bug
