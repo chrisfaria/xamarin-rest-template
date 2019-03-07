@@ -89,7 +89,7 @@
                 <Setter Property="Margin" Value="5"></Setter>
             </Style>
 
-            <Style x:Key="PieTileNameStyle" TargetType="{x:Type Label}">
+            <Style x:Key="ItemTileNameStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource EntryGrey}"></Setter>
                 <Setter Property="FontAttributes" Value="Bold"></Setter>
@@ -97,14 +97,14 @@
                 <Setter Property="HorizontalOptions" Value="Start"></Setter>
             </Style>
 
-            <Style x:Key="PieTilePriceStyle" TargetType="{x:Type Label}">
+            <Style x:Key="ItemTilePriceStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource MainCyan}"></Setter>
                 <Setter Property="VerticalOptions" Value="Center"></Setter>
                 <Setter Property="HorizontalOptions" Value="End"></Setter>
             </Style>
 
-            <Style x:Key="PieTileDescriptionStyle" TargetType="{x:Type Label}">
+            <Style x:Key="ItemTileDescriptionStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource EntryGrey}"></Setter>
                 <Setter Property="VerticalOptions" Value="Center"></Setter>

@@ -44,7 +44,7 @@
             </Frame>
             <Frame  AbsoluteLayout.LayoutFlags="PositionProportional" Padding="0,0,0,0" BackgroundColor="Transparent" BorderColor="Transparent"
                     AbsoluteLayout.LayoutBounds="0.5,0,50,50" VerticalOptions="Fill" HorizontalOptions="Fill">
-                <Image Source="logo.png" VerticalOptions="Start" Grid.Row="0" Grid.RowSpan="2"></Image>
+                <Image Source="bethanylogowithborder.png" VerticalOptions="Start" Grid.Row="0" Grid.RowSpan="2"></Image>
             </Frame>
         </AbsoluteLayout>
     </Grid>

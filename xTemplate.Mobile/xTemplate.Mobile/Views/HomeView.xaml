@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xTemplate.Mobile.Views.HomeView"
@@ -8,6 +8,6 @@
              utility:ViewModelLocator.AutoWireViewModel="True"
              Title="Welcome" 
              x:Name="HomeViewPage" >
-    <Label Text="PIES OF THE WEEK" Style="{StaticResource PageHeaderStyle}" HorizontalOptions="CenterAndExpand"></Label>
+    <Label Text="HOME PAGE" Style="{StaticResource PageHeaderStyle}" HorizontalOptions="CenterAndExpand"></Label>
  
 </ContentPage>

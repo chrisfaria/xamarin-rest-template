@@ -3,8 +3,8 @@
     public class ApiConstants
     {
         public const string BaseApiUrl = "http://192.168.1.35:5000/";
-        public const string CatalogEndpoint = "api/catalog/pies/"; 
-        public const string PiesOfTheWeekEndpoint = "api/catalog/piesoftheweek/"; 
+        public const string CatalogEndpoint = "api/catalog/items/"; 
+        public const string ItemsOfTheWeekEndpoint = "api/catalog/itemsoftheweek/"; 
         public const string ShoppingCartEndpoint = "api/shoppingcart";
         public const string AddShoppingCartItemEndpoint = "api/shoppingcart/";
         public const string AddContactInfoEndpoint = "api/contact";

@@ -57,27 +57,6 @@ namespace xTemplate.Mobile.ViewModels
                 MenuItemType = MenuItemType.Home
             });
 
-            /*MenuItems.Add(new MainMenuItem
-            {
-                MenuText = "Pies",
-                ViewModelToLoad = typeof(PieCatalogViewModel),
-                MenuItemType = MenuItemType.Pies
-            });
-
-            MenuItems.Add(new MainMenuItem
-            {
-                MenuText = "Cart",
-                ViewModelToLoad = typeof(ShoppingCartViewModel),
-                MenuItemType = MenuItemType.ShoppingCart
-            });
-
-            MenuItems.Add(new MainMenuItem
-            {
-                MenuText = "Contact us",
-                ViewModelToLoad = typeof(ContactViewModel),
-                MenuItemType = MenuItemType.Contact
-            });*/
-
             MenuItems.Add(new MainMenuItem
             {
                 MenuText = "Log out",

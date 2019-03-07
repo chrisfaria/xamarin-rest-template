@@ -15,12 +15,6 @@ namespace xTemplate.Mobile.Converters
             {
                 case MenuItemType.Home:
                     return "ic_home.png";
-                case MenuItemType.Contact:
-                    return "ic_contact.png";
-                case MenuItemType.Pies:
-                    return "ic_pies.png";
-                case MenuItemType.ShoppingCart:
-                    return "ic_cart.png";
                 case MenuItemType.Logout:
                     return "ic_logout.png";
                 default:
