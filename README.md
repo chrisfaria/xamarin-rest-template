@@ -30,3 +30,19 @@ I am using the following naming conventions for branches:
 * __develop__: development branch
 * feat/branch-desc: branch created from __develop__ to add a new feature
 * bug/branch-desc: branch created from __develop__ to fix a bug
+
+### Code Explanation
+
+##### Behaviors
+Behaviors let you add functionality to user interface controls without having to subclass them. Instead of code behind, the functionality is implemented in a behavior class and attached to the control as if it was part of the control itself.
+In this case these behaviors are being used when the menu items are tapped since this is the only way to catch the event.
+
+##### Bootstrap
+This is used for Inversion of Control (IoC) via the Nuget package Autofac.
+https://autofac.org/
+
+##### Constants
+Classes containing application settings that remain constant for the build
+
+##### Controls
+Here we'll create custom renderer. For example we'll have a bindable property to turn a regular text entry box into one with rounded corners. This also requires the actual renderer to be defined in the Android and iOS project (see the Renderers folder)
