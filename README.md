@@ -33,6 +33,8 @@ I am using the following naming conventions for branches:
 
 ### Code Explanation
 
+The code has been organized into folders. This section explains what is contained in each folder
+
 ##### Behaviors
 Behaviors let you add functionality to user interface controls without having to subclass them. Instead of code behind, the functionality is implemented in a behavior class and attached to the control as if it was part of the control itself.
 In this case these behaviors are being used when the menu items are tapped since this is the only way to catch the event.
@@ -44,5 +46,55 @@ https://autofac.org/
 ##### Constants
 Classes containing application settings that remain constant for the build
 
+##### Contracts
+Interfaces to be used by the different services that can be injected into the application
+
 ##### Controls
 Here we'll create custom renderer. For example we'll have a bindable property to turn a regular text entry box into one with rounded corners. This also requires the actual renderer to be defined in the Android and iOS project (see the Renderers folder)
+
+##### Converters
+This area contains classes that convert data from one format to another. For example add a dollar sign in front of monetary values or get the event associated with a menu item tap
+
+##### Enumerations
+Groups categories of items to be used in the code
+
+##### Exceptions
+The execptions used by the API call
+
+##### Exceptions
+
+
+##### Models
+Common objects used throughout the application
+
+##### Repository
+The logic used to make HTTPClient web calls to an API
+
+##### Services
+The business logic behind the code that can be injected in. This has been seperated into 2 folders:
+
+Data - for access to the different types of data the application uses
+* authentication - handles authenication requests
+* itemData - application data
+* base - handles cached data
+
+General - for basic services that wouldn't be app specific
+* Navigation - navigate pages
+* Connection - checks for internet connectivity
+* Dialog - pop up boxes
+* Settings - user settings
+
+##### Templates
+Comment reusable front end XAML templates
+
+##### Utility
+Classes to assist with common useful work:
+* AppSettings.cs - adds support for application settings via Xam.Plugins.Settings
+* ViewModelLocator.cs - Interacts with the underlying platform by programactially allowing the XAML to be mapped to a class in the ViewModels folder instead of the code behind
+
+##### View Models
+an abstraction of the view exposing public properties and commands. This is connected with the Utility/ViewModelLocator.cs
+
+##### Views
+The XAML structure, layout, and appearance of what a user sees on the screen
+
