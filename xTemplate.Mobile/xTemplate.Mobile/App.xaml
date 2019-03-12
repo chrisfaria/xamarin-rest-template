@@ -2,7 +2,9 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="xTemplate.Mobile.App"
-             xmlns:converters="clr-namespace:xTemplate.Mobile.Converters;assembly=xTemplate.Mobile">
+             xmlns:converters="clr-namespace:xTemplate.Mobile.Converters;assembly=xTemplate.Mobile"
+             xmlns:controls="clr-namespace:xTemplate.Mobile.Controls;assembly=xTemplate.Mobile"
+             >
     <Application.Resources>
         <ResourceDictionary>
             
@@ -57,7 +59,16 @@
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
            
-            
+            <Style x:Key="RoundedEntryStyle" TargetType="{x:Type controls:RoundedEntry}">
+                <Setter Property="CornerRadius" Value="3"></Setter>
+                <Setter Property="IsCurvedCornersEnabled" Value="True"></Setter>
+                <Setter Property="BorderColor" Value="{StaticResource LightGrey}"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Start"></Setter>
+                <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"></Setter>
+                <Setter Property="HeightRequest" Value="30"></Setter>
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlainGrey}"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource EntryGrey}"></Setter>
+            </Style>
 
             <Style x:Key="RegularEntryStyle" TargetType="{x:Type Entry}">
                 <Setter Property="HorizontalTextAlignment" Value="Start"></Setter>

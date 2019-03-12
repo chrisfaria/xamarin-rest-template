@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="xTemplate.Mobile.Views.LoginView"
+             xmlns:controls="clr-namespace:xTemplate.Mobile.Controls;assembly=xTemplate.Mobile"
              xmlns:utility="clr-namespace:xTemplate.Mobile.Utility;assembly=xTemplate.Mobile"
              utility:ViewModelLocator.AutoWireViewModel="True"
              BackgroundColor="{StaticResource MainCyan}">
@@ -36,8 +37,8 @@
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>
-                    <Entry Placeholder="User name" WidthRequest="100" Text="{Binding UserName, Mode=TwoWay}"/>
-                    <Entry IsPassword="True" Placeholder="Password" WidthRequest="100" Style="{StaticResource RegularEntryStyle}" Text="{Binding Password, Mode=TwoWay}"/>
+                    <controls:RoundedEntry Placeholder="User name" WidthRequest="100" Style="{StaticResource RoundedEntryStyle}" Text="{Binding UserName, Mode=TwoWay}"/>
+                    <controls:RoundedEntry IsPassword="True" Placeholder="Password" WidthRequest="100" Style="{StaticResource RoundedEntryStyle}" Text="{Binding Password, Mode=TwoWay}"/>
                     <Button Style="{StaticResource RegularButton}" Text="Sign in" Command="{Binding LoginCommand}"></Button>
                     
                 </StackLayout>
