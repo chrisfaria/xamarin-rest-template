@@ -16,8 +16,8 @@ namespace xTemplate.Mobile.ViewModels
         private string _password;
         private string _email;
 
-        public RegistrationViewModel(INavigationService navigationService,IAuthenticationService authenticationService) 
-            : base(navigationService)
+        public RegistrationViewModel(INavigationService navigationService,IAuthenticationService authenticationService, IDialogService dialogService)
+            : base(navigationService, dialogService)
         {
             _authenticationService = authenticationService;
         }

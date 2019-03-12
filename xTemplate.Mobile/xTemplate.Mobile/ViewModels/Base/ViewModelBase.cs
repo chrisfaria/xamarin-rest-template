@@ -9,10 +9,12 @@ namespace xTemplate.Mobile.ViewModels.Base
     public class ViewModelBase: INotifyPropertyChanged
     {
         protected readonly INavigationService _navigationService;
+        protected readonly IDialogService _dialogService;
 
-        public ViewModelBase(INavigationService navigationService)
+        public ViewModelBase(INavigationService navigationService, IDialogService dialogService)
         {
             _navigationService = navigationService;
+            _dialogService = dialogService;
         }
 
         private bool _isBusy;

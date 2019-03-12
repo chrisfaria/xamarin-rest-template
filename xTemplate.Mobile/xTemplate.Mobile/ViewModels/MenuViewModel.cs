@@ -12,8 +12,8 @@ namespace xTemplate.Mobile.ViewModels
     {
         private ObservableCollection<MainMenuItem> _menuItems;
 
-        public MenuViewModel(INavigationService navigationService) 
-            : base(navigationService)
+        public MenuViewModel(INavigationService navigationService, IDialogService dialogService)
+            : base(navigationService, dialogService)
         {
             MenuItems = new ObservableCollection<MainMenuItem>();
             LoadMenuItems();

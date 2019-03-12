@@ -30,6 +30,7 @@ namespace xTemplate.Mobile.Bootstrap
 
             //services - general
             builder.RegisterType<NavigationService>().As<INavigationService>();
+            builder.RegisterType<DialogService>().As<IDialogService>();
 
             //General
             //builder.RegisterType<GenericRepository>().As<IGenericRepository>();
