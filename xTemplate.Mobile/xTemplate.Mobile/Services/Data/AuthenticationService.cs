@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Threading.Tasks;
 using xTemplate.Mobile.Contracts.Services.Data;
+using xTemplate.Mobile.Contracts.Services.General;
 using xTemplate.Mobile.Models;
 
 namespace xTemplate.Mobile.Services.Data
 {
     public class AuthenticationService : IAuthenticationService
     {
-        public AuthenticationService()
+        private readonly ISettingsService _settingsService;
+        public AuthenticationService(ISettingsService settingsService)
         {
+            _settingsService = settingsService;
+
         }
 
         public async Task<AuthenticationResponse> Authenticate(string userName, string password)
@@ -26,6 +30,7 @@ namespace xTemplate.Mobile.Services.Data
                 AuthenticationResponse authenticationResponse = new AuthenticationResponse();
                 authenticationResponse.IsAuthenticated = true;
                 authenticationResponse.User.UserName = userName;
+                authenticationResponse.User.FirstName = "Chris";
 
                 System.Threading.Thread.Sleep(2000);
 
@@ -35,7 +40,7 @@ namespace xTemplate.Mobile.Services.Data
 
         public bool IsUserAuthenticated()
         {
-            return true;
+            return !string.IsNullOrEmpty(_settingsService.UserIdSetting);
         }
 
         public async Task<AuthenticationResponse> Register(string firstName, string lastName, string email, string userName, string password)

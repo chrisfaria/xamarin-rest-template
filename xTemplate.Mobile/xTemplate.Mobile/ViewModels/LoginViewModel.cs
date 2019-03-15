@@ -11,14 +11,19 @@ namespace xTemplate.Mobile.ViewModels
 {
     public class LoginViewModel: ViewModelBase
     {
+        private IAuthenticationService _authenticationService;
+        private readonly ISettingsService _settingsService;
+
         private string _userName;
         private string _password;
-        private IAuthenticationService _authenticationService;
 
-        public LoginViewModel(INavigationService navigationService, IAuthenticationService authenticationService,
+        public LoginViewModel(ISettingsService settingsService, 
+            INavigationService navigationService, 
+            IAuthenticationService authenticationService,
             IDialogService dialogService)
             :base(navigationService, dialogService)
         {
+            _settingsService = settingsService;
             _authenticationService = authenticationService;
         }
 
@@ -53,8 +58,8 @@ namespace xTemplate.Mobile.ViewModels
             if (authenticationResponse.IsAuthenticated)
             {
                 // we store the Id to know if the user is already logged in to the application
-                //_settingsService.UserIdSetting = authenticationResponse.User.Id;
-                //_settingsService.UserNameSetting = authenticationResponse.User.FirstName;
+                _settingsService.UserIdSetting = authenticationResponse.User.Id;
+                _settingsService.UserNameSetting = authenticationResponse.User.FirstName;
 
                 await _dialogService.ShowDialog(
                     "This username/password combination isn't known",

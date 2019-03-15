@@ -11,15 +11,17 @@ namespace xTemplate.Mobile.ViewModels
     public class MenuViewModel : ViewModelBase
     {
         private ObservableCollection<MainMenuItem> _menuItems;
+        private readonly ISettingsService _settingsService;
 
-        public MenuViewModel(INavigationService navigationService, IDialogService dialogService)
+        public MenuViewModel(INavigationService navigationService, IDialogService dialogService, ISettingsService settingsService)
             : base(navigationService, dialogService)
         {
+            _settingsService = settingsService;
             MenuItems = new ObservableCollection<MainMenuItem>();
             LoadMenuItems();
         }
 
-        public string WelcomeText => "Hello dude";// + _settingsService.UserNameSetting;
+        public string WelcomeText => "Hello " + _settingsService.UserNameSetting;
 
         public ICommand MenuItemTappedCommand => new Command(OnMenuItemTapped);
 
@@ -39,8 +41,8 @@ namespace xTemplate.Mobile.ViewModels
 
             if (menuItem != null && menuItem.MenuText == "Log out")
             {
-                //_settingsService.UserIdSetting = null;
-                //_settingsService.UserNameSetting = null;
+                _settingsService.UserIdSetting = null;
+                _settingsService.UserNameSetting = null;
                 _navigationService.ClearBackStack();
             }
 
