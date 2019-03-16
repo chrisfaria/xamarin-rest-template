@@ -61,9 +61,6 @@ Groups categories of items to be used in the code
 ##### Exceptions
 The execptions used by the API call
 
-##### Exceptions
-
-
 ##### Models
 Common objects used throughout the application
 
