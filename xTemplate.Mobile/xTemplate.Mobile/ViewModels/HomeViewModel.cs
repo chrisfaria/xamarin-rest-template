@@ -14,8 +14,9 @@ namespace xTemplate.Mobile.ViewModels
     public class HomeViewModel : ViewModelBase
     {
 
-        public HomeViewModel(INavigationService navigationService, IDialogService dialogService)
-            : base(navigationService, dialogService)
+        public HomeViewModel(IConnectionService connectionService, INavigationService navigationService, 
+            IDialogService dialogService)
+            : base(connectionService, navigationService, dialogService)
         {
 
         }

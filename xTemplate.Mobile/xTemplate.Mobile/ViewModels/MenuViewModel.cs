@@ -13,8 +13,10 @@ namespace xTemplate.Mobile.ViewModels
         private ObservableCollection<MainMenuItem> _menuItems;
         private readonly ISettingsService _settingsService;
 
-        public MenuViewModel(INavigationService navigationService, IDialogService dialogService, ISettingsService settingsService)
-            : base(navigationService, dialogService)
+        public MenuViewModel(IConnectionService connectionService, INavigationService navigationService, 
+            IDialogService dialogService,
+            ISettingsService settingsService)
+            : base(connectionService, navigationService, dialogService)
         {
             _settingsService = settingsService;
             MenuItems = new ObservableCollection<MainMenuItem>();

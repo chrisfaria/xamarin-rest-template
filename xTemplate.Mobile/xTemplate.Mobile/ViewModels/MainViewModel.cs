@@ -8,8 +8,10 @@ namespace xTemplate.Mobile.ViewModels
     {
         private MenuViewModel _menuViewModel;
 
-        public MainViewModel(INavigationService navigationService, MenuViewModel menuViewModel, IDialogService dialogService)
-            :base(navigationService, dialogService)
+        public MainViewModel(IConnectionService connectionService, INavigationService navigationService, 
+            MenuViewModel menuViewModel, 
+            IDialogService dialogService)
+            :base(connectionService, navigationService, dialogService)
         {
             _menuViewModel = menuViewModel;
         }

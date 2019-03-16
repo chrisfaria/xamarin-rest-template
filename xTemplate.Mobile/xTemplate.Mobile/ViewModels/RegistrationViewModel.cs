@@ -9,6 +9,7 @@ namespace xTemplate.Mobile.ViewModels
     public class RegistrationViewModel : ViewModelBase
     {
         private readonly IAuthenticationService _authenticationService;
+        private readonly ISettingsService _settingsService;
 
         private string _userName;
         private string _firstName;
@@ -16,10 +17,14 @@ namespace xTemplate.Mobile.ViewModels
         private string _password;
         private string _email;
 
-        public RegistrationViewModel(INavigationService navigationService,IAuthenticationService authenticationService, IDialogService dialogService)
-            : base(navigationService, dialogService)
+        public RegistrationViewModel(IConnectionService connectionService, INavigationService navigationService,
+            IAuthenticationService authenticationService, 
+            IDialogService dialogService, 
+            ISettingsService settingsService)
+            : base(connectionService, navigationService, dialogService)
         {
             _authenticationService = authenticationService;
+            _settingsService = settingsService;
         }
 
         public string UserName
@@ -77,7 +82,18 @@ namespace xTemplate.Mobile.ViewModels
 
         private async void OnRegister()
         {
+            if (_connectionService.IsConnected)
+            {
+                var userRegistered = await
+                    _authenticationService.Register(_firstName, _lastName, _email, _userName, _password);
 
+                if (userRegistered.IsAuthenticated)
+                {
+                    await _dialogService.ShowDialog("Registration successful", "Message", "OK");
+                    _settingsService.UserIdSetting = userRegistered.User.Id;
+                    await _navigationService.NavigateToAsync<LoginViewModel>();
+                }
+            }
         }
 
         private void OnLogin()

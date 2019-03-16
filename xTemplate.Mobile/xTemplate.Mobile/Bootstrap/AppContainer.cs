@@ -29,6 +29,7 @@ namespace xTemplate.Mobile.Bootstrap
             builder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
 
             //services - general
+            builder.RegisterType<ConnectionService>().As<IConnectionService>();
             builder.RegisterType<NavigationService>().As<INavigationService>();
             builder.RegisterType<DialogService>().As<IDialogService>();
             builder.RegisterType<SettingsService>().As<ISettingsService>().SingleInstance();

@@ -8,11 +8,14 @@ namespace xTemplate.Mobile.ViewModels.Base
 {
     public class ViewModelBase: INotifyPropertyChanged
     {
+        protected readonly IConnectionService _connectionService;
         protected readonly INavigationService _navigationService;
         protected readonly IDialogService _dialogService;
 
-        public ViewModelBase(INavigationService navigationService, IDialogService dialogService)
+        public ViewModelBase(IConnectionService connectionService, INavigationService navigationService, 
+            IDialogService dialogService)
         {
+            _connectionService = connectionService;
             _navigationService = navigationService;
             _dialogService = dialogService;
         }

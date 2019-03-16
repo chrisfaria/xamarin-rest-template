@@ -17,11 +17,11 @@ namespace xTemplate.Mobile.ViewModels
         private string _userName;
         private string _password;
 
-        public LoginViewModel(ISettingsService settingsService, 
+        public LoginViewModel(IConnectionService connectionService, ISettingsService settingsService, 
             INavigationService navigationService, 
             IAuthenticationService authenticationService,
             IDialogService dialogService)
-            :base(navigationService, dialogService)
+            :base(connectionService, navigationService, dialogService)
         {
             _settingsService = settingsService;
             _authenticationService = authenticationService;
@@ -53,20 +53,34 @@ namespace xTemplate.Mobile.ViewModels
 
         private async void OnLogin(object obj)
         {
-            var authenticationResponse = await _authenticationService.Authenticate(UserName, Password);
-
-            if (authenticationResponse.IsAuthenticated)
+            IsBusy = true;
+            if (_connectionService.IsConnected)
             {
-                // we store the Id to know if the user is already logged in to the application
-                _settingsService.UserIdSetting = authenticationResponse.User.Id;
-                _settingsService.UserNameSetting = authenticationResponse.User.FirstName;
+                var authenticationResponse = await _authenticationService.Authenticate(UserName, Password);
 
+                if (authenticationResponse.IsAuthenticated)
+                {
+                    // we store the Id to know if the user is already logged in to the application
+                    _settingsService.UserIdSetting = authenticationResponse.User.Id;
+                    _settingsService.UserNameSetting = authenticationResponse.User.FirstName;
+
+                    IsBusy = false;
+                    await _navigationService.NavigateToAsync<MainViewModel>();
+                }
+                else
+                {
+                    await _dialogService.ShowDialog(
+                        "This username/password combination isn't known",
+                        "Error logging you in",
+                        "OK");
+                }
+            }
+            else
+            {
                 await _dialogService.ShowDialog(
-                    "This username/password combination isn't known",
-                    "Error logging you in",
-                    "OK");
-
-                await _navigationService.NavigateToAsync<MainViewModel>();
+                        "Network issue :( Please try again later",
+                        "Error logging you in",
+                        "OK");
             }
         }
     }

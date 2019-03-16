@@ -48,5 +48,6 @@
                 <Image Source="bethanylogowithborder.png" VerticalOptions="Start" Grid.Row="0" Grid.RowSpan="2"></Image>
             </Frame>
         </AbsoluteLayout>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center" Color="Red"/>
     </Grid>
 </ContentPage>
