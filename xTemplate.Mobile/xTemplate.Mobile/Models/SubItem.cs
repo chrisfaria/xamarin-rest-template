@@ -1,4 +1,4 @@
-﻿namespace xTemplate.API.Models
+﻿namespace xTemplate.Mobile.Models
 {
     public class SubItem
     {

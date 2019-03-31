@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace xTemplate.API.Models
+namespace xTemplate.Mobile.Models
 {
     public class Item
     {
