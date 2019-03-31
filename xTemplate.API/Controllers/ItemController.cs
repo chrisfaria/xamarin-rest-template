@@ -33,6 +33,7 @@ namespace xTemplate.API.Controllers
                 SubItem s3c = new SubItem { Name = "SubItem3c", IsComplete = false };
                 SubItem s3d = new SubItem { Name = "SubItem3d", IsComplete = true };
 
+
                 _context.SubItems.Add(s1a);
                 _context.SubItems.Add(s1b);
                 _context.SubItems.Add(s1c);
@@ -41,6 +42,8 @@ namespace xTemplate.API.Controllers
                 _context.SubItems.Add(s3b);
                 _context.SubItems.Add(s3c);
                 _context.SubItems.Add(s3d);
+                              
+
                 // Creates new Items if collection is empty,
                 // which means you can't delete all Items.
                 _context.Items.Add(new Item
