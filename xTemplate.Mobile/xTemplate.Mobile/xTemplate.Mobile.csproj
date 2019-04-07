@@ -41,6 +41,7 @@
     <Folder Include="Templates\" />
     <Folder Include="Converters\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Utility\AppSettings.cs" />

@@ -5,7 +5,7 @@ using xTemplate.Mobile.Contracts.Services.Data;
 using xTemplate.Mobile.Contracts.Services.General;
 using xTemplate.Mobile.Services.Data;
 using xTemplate.Mobile.Services.General;
-//using xTemplate.Mobile.Services.General;
+using xTemplate.Mobile.Repository;
 using xTemplate.Mobile.ViewModels;
 
 namespace xTemplate.Mobile.Bootstrap
@@ -27,6 +27,7 @@ namespace xTemplate.Mobile.Bootstrap
 
             //services - data
             builder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
+            builder.RegisterType<CatalogDataService>().As<ICatalogDataService>();
 
             //services - general
             builder.RegisterType<ConnectionService>().As<IConnectionService>();
@@ -35,7 +36,7 @@ namespace xTemplate.Mobile.Bootstrap
             builder.RegisterType<SettingsService>().As<ISettingsService>().SingleInstance();
 
             //General
-            //builder.RegisterType<GenericRepository>().As<IGenericRepository>();
+            builder.RegisterType<GenericRepository>().As<IGenericRepository>();
 
             _container = builder.Build();
         }

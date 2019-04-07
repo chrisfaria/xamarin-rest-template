@@ -9,5 +9,46 @@
              Title="Welcome" 
              x:Name="HomeViewPage" >
     <Label Text="HOME PAGE" Style="{StaticResource PageHeaderStyle}" HorizontalOptions="CenterAndExpand"></Label>
- 
+    <Grid>
+        <ListView VerticalOptions="FillAndExpand" Header="{Binding .}" Footer="{Binding .}" 
+                  ItemsSource="{Binding Items}" CachingStrategy="RecycleElement"
+                  SeparatorVisibility="Default" HasUnevenRows="True">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                 <StackLayout Grid.Row="1">
+                            <Label Text="THE LIST OF ITEMS" Style="{StaticResource PageHeaderStyle}" HorizontalOptions="CenterAndExpand"></Label>
+                        </StackLayout>
+        
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee" Orientation="Vertical">
+                            <Label Text="{Binding Name}" TextColor="#f35e20" />
+                            <Label Text="{Binding Desc}" TextColor="#503026" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.FooterTemplate>
+                <DataTemplate>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid BackgroundColor="White">
+                            <Image HeightRequest="30" Source="whitewood.jpg" Aspect="Fill"></Image>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Image Source="patternwide.png" HeightRequest="50" Aspect="Fill"></Image>
+                            <Label Text="© 2018 Bethany's Pie Shop" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource RegularStyle}"></Label>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.FooterTemplate>
+        </ListView>
+    </Grid> 
+
 </ContentPage>
